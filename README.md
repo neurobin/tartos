@@ -22,7 +22,7 @@ Install:
 
 Fom source:
 
-    It can be run without installing. It can be installed by giving the install file execution permission and running it once.
+    It can be installed by giving the "install" file, execution permission and running it once in terminal.
 
 For Ubuntu (not available yet):
 
