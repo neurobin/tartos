@@ -4,8 +4,9 @@ TAR archive to shell script converter
 **************************************************************
 
 The tartos script is a standalone bash shell script which converts different type of TAR archives to a single shell script (bash).
-This is geneally used in making a single install scipt from an existing tar archives with executable or installable software.
-The tartos script itself is written in bash and thus depends on it and on the package tar.
+This kind of approach is generally adopted to make a single install scipt from an existing tar archives with executable or installable software.
+It can be used to make a self extracting archive/installer which does some additional jobs like installing softwares, compared to
+the conventional tar archive files. The tartos script itself is written in bash and thus depends on it and on the package tar.
 
 Supported TARs:
 
