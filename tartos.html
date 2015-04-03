@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of tartos</TITLE>
+</HEAD><BODY>
+<H1>tartos</H1>
+Section: User Commands  (1)<BR>Updated: Apr 041, 2015<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+
+<P>
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+tartos - TAR to shell script converter
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>tartos</B>
+
+[ -<B>o</B> outfile ]
+[ -<B>O</B> outfile ]
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<B>tartos</B>
+
+The tartos script is a standalone bash shell script which converts
+different type of TAR archives to a single shell script (bash).
+<P>
+This kind of approach is generally adopted to make a single install
+<P>
+<BR>&nbsp;scipt&nbsp;from&nbsp;an&nbsp;existing&nbsp;tar&nbsp;archives&nbsp;with&nbsp;executable&nbsp;or&nbsp;installable&nbsp;
+<P>
+software. It can be used to make a self extracting archive/installer 
+<P>
+which does some additional jobs like installing softwares, compared to
+<P>
+the conventional tar archive files. The tartos script itself is written
+<P>
+in bash and thus depends on it and on the package tar.
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+The command line options are:
+<DL COMPACT>
+<DT><B>-o outfile</B>
+
+<DD>
+Output directory where the script will install archive later
+<DT><B>-O outfile</B>
+
+<DD>
+Output directory where the script will install archive later
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>EXAMPLES</H2>
+
+<B>tartos</B>
+
+Ex1: tartos archive script command
+Ex2: tartos archive script command -o directory
+Ex3: tartos -O directory archive script command
+<A NAME="lbAG">&nbsp;</A>
+<H2>ADVANCED USE</H2>
+
+<B>tartos</B>
+
+tartos archive scriptname &quot;commands&quot; -o output_directory_to_be_bound_in_the_script_where_it_will_extract_the_tar
+<P>
+1. It can take upto four arguments, the first argument is a tar archive, 
+<P>
+second one is the name of the target script file
+<P>
+and third one is custom command and the 4th argument is of type [-o outdir]
+<P>
+[-o outdir] can take any position as long as the sequence of the first three argument is maintained.
+<P>
+Ex1: tartos path_to_tar_file script_name_or_path command
+<P>
+Ex2: tartos archive script command -o directory
+<P>
+Ex3: tartos -O directory archive script command
+<P>
+-o and -O is equivalent 
+<P>
+2. It will ask for necessary arguments/info as it needs on the way.
+<P>
+3. Give commands inside quotation mark: double quotation is recommended
+<P>
+4. Best way of giving custom command is to write them in another script and put that script
+<P>
+as a command into tartos command input.
+<P>
+Ex: Enter custom command or script (if any): ./mycustomscript
+<P>
+if the path to the script contains space, use double quotes
+<P>
+<A NAME="lbAH">&nbsp;</A>
+<H2>BUGS</H2>
+
+Report bugs to &lt;<A HREF="http://github.com/neurobin/tartos">http://github.com/neurobin/tartos</A>&gt;
+<A NAME="lbAI">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Jahidul Hamid
+&lt;<A HREF="http://github.com/neurobin">http://github.com/neurobin</A>&gt;
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">EXAMPLES</A><DD>
+<DT><A HREF="#lbAG">ADVANCED USE</A><DD>
+<DT><A HREF="#lbAH">BUGS</A><DD>
+<DT><A HREF="#lbAI">AUTHOR</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 23:48:41 GMT, April 03, 2015
+</BODY>
+</HTML>
+
