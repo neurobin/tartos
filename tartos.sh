@@ -4,6 +4,26 @@ args=( "${@}" )
 ind=0
 cont=0
 for arg in "${args[@]}"; do
+
+[ "$arg" == "-h" ] || [ "$arg" == "--help" ] && printf "
+*******TAR to shell script converter********
+Usage: 
+tartos archive script commands -o outdir
+tartos archive script commands
+tartos archive script
+tartos archive
+tartos
+tartos -o outdir archive script commands
+tartos archive -o outdir script
+tartos archive script -o outdir commands
+tartos -o outdir
+etc...
+archive is the tar archive name/path
+script is the script path/name to be
+commands are custom commands to be run when executing the resultant script
+outdir is the directory where the resultant script will install/put the
+archive contents, it's default at the working directory\n\n" && exit 0
+
 if [[ "$arg" == -[Oo] ]] || [[ $cont == 1 ]]; then
 [[ $cont > 1 ]] && echo "Invalid use of -o option, you can't use it more than once"
 inarg[3]="$arg"
