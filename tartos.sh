@@ -1,31 +1,44 @@
 #!/bin/bash
-#argument analysis starts here
+#help
+helpme="
+*******TAR to shell script (tartos)********
+***Usage: 
+tartos archive script \"commands\" -o outdir
+tartos archive script \"commands\"
+tartos archive script
+tartos archive
+tartos
+tartos -o outdir archive script \"commands\"
+tartos archive -o outdir script
+tartos archive script -o outdir \"commands\"
+tartos -o outdir
+***etc...
+
+***outdir can be specified without -o too
+***but then all the inputs must be given:
+tartos archive script \"commands\" outdir
+
+***archive is the tar archive name/path
+***script is the script path/name to be
+***commands are custom commands to be run when executing the resultant script
+***outdir is the directory where the resultant script will install/put the
+***archive contents, it's default at the working directory
+
+***tartos -h or tartos --help to show this help menu
+***Consult man page for more info\n"
+#help
+
+
+#argument analysis
 args=( "${@}" )
 ind=0
 cont=0
 for arg in "${args[@]}"; do
 
-[ "$arg" == "-h" ] || [ "$arg" == "--help" ] && printf "
-*******TAR to shell script converter********
-Usage: 
-tartos archive script commands -o outdir
-tartos archive script commands
-tartos archive script
-tartos archive
-tartos
-tartos -o outdir archive script commands
-tartos archive -o outdir script
-tartos archive script -o outdir commands
-tartos -o outdir
-etc...
-archive is the tar archive name/path
-script is the script path/name to be
-commands are custom commands to be run when executing the resultant script
-outdir is the directory where the resultant script will install/put the
-archive contents, it's default at the working directory\n\n" && exit 0
+[ "$arg" == "-h" ] || [ "$arg" == "--help" ] && printf "$helpme" && exit 0
 
 if [[ "$arg" == -[Oo] ]] || [[ $cont == 1 ]]; then
-[[ $cont > 1 ]] && echo "Invalid use of -o option, you can't use it more than once"
+[[ $cont > 1 ]] && echo "Invalid use of -o or-O option, you can't use it more than once"
 inarg[3]="$arg"
 #echo "$ind ${inarg[((ind))]} ${inarg[3]}"
 ((cont++))
@@ -38,7 +51,9 @@ done
 [ "${args[4]}" != "" ] && echo "Too many arguments, stop...
 If you are using commands as arguments,
 try putting them in double quotes and thus constructing
-a single argument altogether" && exit 0
+a single argument altogether
+***Enter tartos -h or tartos --help to get help" && exit 0
+#argument analysis
 #Checking if destination directory exists
 dest="${inarg[3]}"
 [[ "$dest" == "" ]] && dest="./" || mkdir -p "$dest"
@@ -108,6 +123,7 @@ printf "#!/bin/bash
 PAYLOAD_LINE=\`awk '/^__PAYLOAD_BELOW__/ {print NR + 1; exit 0; }' \$0\`
 tail -n+\$PAYLOAD_LINE \$0 | tar -xv ${format[((index))]} -C $dest
 #This is the place to add custom command
+echo -e '\nExecuting custom commands....\n'
 $custi
 exit 0
 __PAYLOAD_BELOW__\n" > "$tmp" &&
@@ -116,3 +132,4 @@ cat "$tmp" "$payload" > "$script" && rm "$tmp" &&
 chmod +x "$script" &&
 echo -e "***Success*** \nScript is saved as: $script" || 
 echo -e "Failed!!!\nSomething seriously went wrong..."
+

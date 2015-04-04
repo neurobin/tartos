@@ -10,7 +10,7 @@ Section: User Commands  (1)<BR>Updated: Apr 041, 2015<BR><A HREF="#index">Index<
 <A NAME="lbAB">&nbsp;</A>
 <H2>NAME</H2>
 
-tartos - TAR to shell script converter
+tartos - TAR to shell script
 <A NAME="lbAC">&nbsp;</A>
 <H2>SYNOPSIS</H2>
 
@@ -23,20 +23,14 @@ tartos - TAR to shell script converter
 
 <B>tartos</B>
 
-The tartos script is a standalone bash shell script which converts
-different type of TAR archives to a single shell script (bash).
 <P>
-This kind of approach is generally adopted to make a single install
+The tartos script is a standalone bash shell script which binds different type of TAR archives 
+to a single shell script (bash). This kind of approach is generally adopted to make a single 
+install script from an existing tar archives with executable or installable software. It can 
+be used to make a self extracting archive/installer which does some additional jobs like 
+installing softwares, compared to the conventional tar archive files. The tartos script itself 
+is written in bash and thus depends on it and on the package tar.
 <P>
-<BR>&nbsp;scipt&nbsp;from&nbsp;an&nbsp;existing&nbsp;tar&nbsp;archives&nbsp;with&nbsp;executable&nbsp;or&nbsp;installable&nbsp;
-<P>
-software. It can be used to make a self extracting archive/installer 
-<P>
-which does some additional jobs like installing softwares, compared to
-<P>
-the conventional tar archive files. The tartos script itself is written
-<P>
-in bash and thus depends on it and on the package tar.
 <A NAME="lbAE">&nbsp;</A>
 <H2>OPTIONS</H2>
 
@@ -50,21 +44,34 @@ Output directory where the script will install archive later
 
 <DD>
 Output directory where the script will install archive later
+<DT><B>-h</B>
+
+<DD>
+show help menu
+<DT><B>--help</B>
+
+<DD>
+show help menu
 </DL>
 <A NAME="lbAF">&nbsp;</A>
 <H2>EXAMPLES</H2>
 
 <B>tartos</B>
 
-Ex1: tartos archive script command
-Ex2: tartos archive script command -o directory
-Ex3: tartos -O directory archive script command
+<P>
+tartos archive script &quot;command&quot;
+<P>
+tartos archive script &quot;command&quot; -o directory
+<P>
+tartos -O directory archive script &quot;command&quot;
+<P>
 <A NAME="lbAG">&nbsp;</A>
 <H2>ADVANCED USE</H2>
 
 <B>tartos</B>
 
-tartos archive scriptname &quot;commands&quot; -o output_directory_to_be_bound_in_the_script_where_it_will_extract_the_tar
+<P>
+tartos archive scriptname &quot;commands&quot; -o outputdir
 <P>
 1. It can take upto four arguments, the first argument is a tar archive, 
 <P>
@@ -120,7 +127,7 @@ Jahidul Hamid
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 23:48:41 GMT, April 03, 2015
+Time: 09:04:49 GMT, April 04, 2015
 </BODY>
 </HTML>
 

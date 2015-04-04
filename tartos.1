@@ -2,27 +2,21 @@
 .UC 4
 
 .SH "NAME"
-tartos - TAR to shell script converter
+tartos - TAR to shell script
 .SH "SYNOPSIS"
 .B tartos
 [ \-\fBo\fP outfile ]
 [ \-\fBO\fP outfile ]
 .SH "DESCRIPTION"
 .B tartos
-The tartos script is a standalone bash shell script which converts
-different type of TAR archives to a single shell script (bash).
 
-This kind of approach is generally adopted to make a single install
+The tartos script is a standalone bash shell script which binds different type of TAR archives 
+to a single shell script (bash). This kind of approach is generally adopted to make a single 
+install script from an existing tar archives with executable or installable software. It can 
+be used to make a self extracting archive/installer which does some additional jobs like 
+installing softwares, compared to the conventional tar archive files. The tartos script itself 
+is written in bash and thus depends on it and on the package tar.
 
- scipt from an existing tar archives with executable or installable 
-
-software. It can be used to make a self extracting archive/installer 
-
-which does some additional jobs like installing softwares, compared to
-
-the conventional tar archive files. The tartos script itself is written
-
-in bash and thus depends on it and on the package tar.
 .SH "OPTIONS"
 The command line options are:
 .TP
@@ -31,14 +25,25 @@ Output directory where the script will install archive later
 .TP
 .B -O outfile
 Output directory where the script will install archive later
+.TP
+.B -h
+show help menu
+.TP
+.B --help
+show help menu
 .SH "EXAMPLES"
 .B tartos
-Ex1: tartos archive script command
-Ex2: tartos archive script command \-o directory
-Ex3: tartos \-O directory archive script command
+
+tartos archive script "command"
+
+tartos archive script "command" \-o directory
+
+tartos \-O directory archive script "command"
+
 .SH "ADVANCED USE"
 .B tartos
-tartos archive scriptname "commands" \-o output_directory_to_be_bound_in_the_script_where_it_will_extract_the_tar
+
+tartos archive scriptname "commands" \-o outputdir
 
 1. It can take upto four arguments, the first argument is a tar archive, 
 

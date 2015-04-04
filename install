@@ -1,6 +1,6 @@
 #!/bin/bash
 BASEDIR=`dirname "${0}"`
 cd "$BASEDIR"
-sudo cp tartos.sh /usr/bin/tartos
+sudo cp tartos /usr/bin/
 sudo chmod +x /usr/bin/tartos
 sudo cp tartos.1 /usr/share/man/man1/
