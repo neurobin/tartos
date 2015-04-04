@@ -21,11 +21,11 @@ Supported TARs:
     
 Install:
 
-Fom source:
+From source:
 
-    It can be installed by giving the "install" file, execution permission and running it once in terminal.
+    It can be installed by giving the "install" file execution permission and running it once in terminal.
 
-For Ubuntu (not available yet):
+For Ubuntu:
 
     sudo apt-add-repository -y ppa:neurobin/ppa
     sudo apt-get update
@@ -37,7 +37,9 @@ Use:
 
 Advanced use:
 
-    tartos archive scriptname "commands" -o output_directory_to_be_bound_in_the_script_where_it_will_extract_the_tar
+    tartos archive scriptname "commands" -o outputdir
+    outputdir is a directory which will be bound inside the shell script so that
+    whent the script runs the erntire content will be put in that directory
 
     1. It can take upto four arguments, the first argument is a tar archive, 
     second one is the name of the target script file
