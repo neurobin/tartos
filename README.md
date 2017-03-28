@@ -48,7 +48,7 @@ whent the script runs the erntire content will be put in that directory. It can 
 
 1. It can take upto four arguments, the first argument is a tar archive, second one is the name of the target script file, third one is custom command and the 4th argument is `[-o outdir]`
 2. `[-o outdir]` can take any position as long as the sequence of the first three argument is maintained. `-o` and `-O` is equivalent 
-2. output directory can be specified without -o too. In that case all the arguments are mandatory.
+2. output directory can be specified without `-o` too. In that case all the arguments are mandatory.
 3. It will ask for necessary arguments/info as it needs on the way.
 4. Give commands inside quotation mark: double quotation is recommended
 5. Best way of giving custom command is to write them in another script and put that script as a command into tartos command input. This script can be a pre-installed script or can reside in the tar archive itself (it will be run after the archive is extracted).
