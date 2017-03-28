@@ -23,7 +23,7 @@ the conventional tar archive files. The tartos script itself is written in bash 
 
 From source:
 
-    It can be installed by giving the "install" file execution permission and running it once in terminal.
+    It can be installed by giving the "install" file execution permission and running it in terminal.
 
 For Ubuntu:
 
