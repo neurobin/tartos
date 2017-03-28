@@ -51,7 +51,7 @@ whent the script runs the erntire content will be put in that directory. It can 
 2. output directory can be specified without `-o` too. In that case all the arguments are mandatory.
 3. It will ask for necessary arguments/info as it needs on the way.
 4. Give commands inside quotation mark: double quotation is recommended
-5. Best way of giving custom command is to write them in another script and put that script as a command into tartos command input. This script can reside in the tar archive itself and will be run after the archive is extracted (works like a post extract hook).
+5. Best way of giving custom command is to write them in another script and put that script as a command into tartos command input. This script should reside in the tar archive itself and thus will be run after the archive is extracted (works like a post extract hook).
 
 # Examples:
 First form:
