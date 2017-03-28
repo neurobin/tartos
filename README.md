@@ -77,9 +77,3 @@ Fifth form:
 ```bash
 tartos *.tar.xz install-me.sh "./internal-installer.sh" outdir
 ```
-
-Source: http://github.com/neurobin/tartos
-
-Webpage: http://neurobin.github.io/tartos
-
-Project maintainer and author: Jahidul Hamid <jahidulhamid@yahoo.com>
