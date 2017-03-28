@@ -44,7 +44,7 @@ tartos archive scriptname "commands" -o outputdir
 ```
 
 outputdir is a directory which will be bound inside the shell script so that
-whent the script runs the erntire content will be put in that directory. It can be a install directoy like `/bin/opt` etc..
+whent the script runs the erntire content will be put in that directory. It can be a install directoy like `/opt` , `/usr/local` etc..
 
 1. It can take upto four arguments, the first argument is a tar archive, second one is the name of the target script file, third one is custom command and the 4th argument is `[-o outdir]`
 2. `[-o outdir]` can take any position as long as the sequence of the first three argument is maintained. `-o` and `-O` is equivalent 
